@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <link rel="stylesheet" href="EnergyConsumption.css">
+  <meta charset="UTF-8">
+  <title>Health Score Dashboard</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="main.js"></script>
+</head>
+
+<body class="bg-gray-100 text-gray-900">
+
+  <div class="max-w-6xl mx-auto px-6 py-12">
+
+    <a href="index.html" class="text-blue-600 font-medium mb-6 inline-block">
+      ← Back to Projects
+    </a>
+
+    <!-- Images Grid -->
+ 
+<!-- <div class="slider-container">
+  <button class="nav prev">&#10094;</button>
+
+  <div class="slider">
+    <img src="imgs/Pizza Project_page-0001.jpg">
+    <img src="imgs/Pizza Project_page-0002.jpg">
+    <img src="imgs/Pizza Project_page-0003.jpg">
+    <img src="imgs/Pizza Project_page-0004.jpg">
+    <img src="imgs/Pizza Project_page-0005.jpg">
+    <img src="imgs/Capture6.PNG"> 
+  </div>
+
+  <button class="nav next">&#10095;</button>
+</div> -->
+
+ <!-- Images with intformation -->
+<header>
+        <div class="container-cc">
+            <h1>Energy Consumption Data Analysis</h1>
+            <p>End-to-End Data analysis Project using Power BI</p>
+
+        </div>
+    </header>
+
+    <main class="container-cc">
+        <section class="step-card">
+            <div class="step-content">
+                <h3><span class="step-number">01</span> Step 1: Reviewing the Available Data in Power BI</h3>
+               <p>
+                    In the first step of the analysis, I reviewed the available datasets in Power BI to understand the structure and relationships between the tables.
+                    The analysis file contains three main tables.
+                </p>
+                <h4>Table 1 – Building Master</h4>
+                <p>
+                    This table contains the master data for 11 different buildings.
+                    It includes the essential building information used to link consumption and cost data across the model.
+                </p> 
+            </div>
+            <div class="step-image">
+                <img src="imgs/EnergyCons-1.png" alt="Final Dashboard Overview">
+            </div>
+        </section>
+
+        <section class="step-card">
+            <div class="step-content">
+                <h2><span class="step-number">02</span></h2>
+                <h4>Table 2 – Energy Consumptions</h4>
+                <p>
+                    This table presents the energy consumption units for each building on a yearly basis from 2016 to 2019.
+                    It provides detailed insights into usage patterns across different buildings over time.
+                    </p>
+
+            </div>
+            <div class="step-image">
+                <img src="imgs/EnergyCons-2.png" class="L-image" alt="Data Loading Code">
+            </div>
+        </section>
+
+        <section class="step-card">
+            <div class="step-content">
+                <h2><span class="step-number">03</span></h2>
+                <h4>Table 3 – Rates</h4>
+                    <p>
+                    This table displays the Unit Cost for each year along with the corresponding Energy Type (Water, Gas, Electricity).
+                    It is used to calculate the total energy cost by multiplying consumption units by the unit cost.
+                    </p>
+
+            </div>
+            <div class="step-image">
+                <img src="imgs/EnergyCons-3.png" alt="Data Cleaning Process">
+            </div>
+        </section>
+
+        <section class="step-card">
+            <div class="step-content">
+                <h3><span class="step-number">04</span> Step 2: Transforming the Data using Power Query</h3>
+            <p>
+    In this step, we transformed the data in Power Query to prepare it for analysis. 
+    Specifically, we added a unique Id column in both the <strong>Rates</strong> and <strong>Energy Consumptions</strong> tables 
+    by combining the <strong>Year</strong> and <strong>Energy Type</strong> columns. 
+    This allows us to create a proper relationship between the two tables in the data model.
+</p>
+<h4>Creating the Unique Id Column</h4>
+<p>
+    The unique Id helps link the datasets accurately. 
+    For example, combining <em>Year = 2025</em> and <em>Energy Type = Electricity</em> results in <em>2025_Electricity</em>. 
+    Similarly, <em>Year = 2025</em> and <em>Energy Type = Gas</em> results in <em>2025_Gas</em>.
+</p>
+<p>
+    This approach ensures that each row is uniquely identified, enabling reliable relationships and analysis across tables.
+</p>
+            </div>
+            <div class="step-image">
+                <img src="imgs/EnergyCons-4.png" class="L-image" alt="KPI Results">
+            </div>
+        </section>
+
+
+               <section class="step-card">
+            <div class="step-content">
+               <h3><span class="step-number">05</span> Step 3: Data Modeling</h3>
+<p>
+    In this step, we focused on <strong>data modeling</strong> to establish relationships between the tables in the Power BI data model. 
+    By using the <strong>Unique Id</strong> columns created in the previous step, we connected the <strong>Rates</strong> table with the <strong>Energy Consumptions</strong> table.
+</p>
+<h4>Building Relationships</h4>
+<p>
+    Establishing proper relationships ensures that the data can be analyzed correctly across tables. 
+    For example, linking the <em>Unique Id</em> columns allows us to match the consumption of a specific energy type in a given year with its corresponding rate.
+</p>
+<p>
+    After setting up the relationships, we validated the model to make sure all tables interact correctly, providing accurate results in our reports and visualizations.
+</p>
+
+            </div>
+            <div class="step-image">
+                <img src="imgs/EnergyCons-5.png" alt="Data Cleaning Process">
+            </div>
+        </section>
+
+        <section class="step-card">
+            <div class="step-content">
+                <h3><span class="step-number">06</span> Step 4: Data Visualization and Dashboard Making</h3>
+<p>
+    In this step, we created dashboards to visualize the data and gain insights. 
+    The <strong>Overview</strong> section shows key metrics such as:
+</p>
+<ul>
+    <li><strong>Count of Buildings</strong></li>
+    <li><strong>Total Cost</strong></li>
+    <li><strong>Units Consumed</strong></li>
+    <li><strong>Energy Type Breakdown</strong></li>
+
+</ul>
+<p>
+    These visuals help quickly understand the overall energy consumption and costs across all buildings.
+</p>
+
+            </div>
+            <div class="step-image">
+                <img src="imgs/EnergyCons-6.png" class="L-image" alt="KPI Results">
+            </div>
+        </section>
+
+               <section class="step-card">
+            <div class="step-content">
+<h3><span class="step-number">07</span> Water Consumption Dashboard</h3>
+<p>
+    This page visualizes water usage and costs with the following sections:
+</p>
+<ul>
+    <li><strong>Total Water Consumption:</strong> Shows overall consumption (Daily, Weekly, Monthly, Yearly). Example: 186,245,327 Units.</li>
+    <li><strong>Water Consumption by City:</strong> Chart/table for cities: New York, Chicago, Los Angeles, Phoenix, Houston.</li>
+    <li><strong>Water Consumption by Building:</strong> Chart by Building IDs.</li>
+    <li><strong>Water Cost by Year:</strong> Chart showing costs from 2016–2019.</li>
+    <li><strong>Water Consumption by Year:</strong> Chart showing units consumed 2016–2019.</li>
+    <li><strong>Timeframe Selector:</strong> Choose Daily, Weekly, Monthly, or Yearly view.</li>
+</ul>
+
+            </div>
+            <div class="step-image">
+                <img src="imgs/EnergyCons-7.png" alt="Data Cleaning Process">
+            </div>
+        </section>
+
+        <section class="step-card">
+            <div class="step-content">
+<h3><span class="step-number">08</span> Electricity  Consumption Dashboard</h3>
+<p>
+    This page visualizes water usage and costs with the following sections:
+</p>
+<ul>
+    <li><strong>Total Electricity Consumption:</strong> Shows overall consumption (Daily, Weekly, Monthly, Yearly). Example: 22,224,327 Units.</li>
+    <li><strong>Electricity Consumption by City:</strong> Chart/table for cities: New York, Chicago, Los Angeles, Phoenix, Houston.</li>
+    <li><strong>Electricity Consumption by Building:</strong> Chart by Building IDs.</li>
+    <li><strong>Electricity Cost by Year:</strong> Chart showing costs from 2016–2019.</li>
+    <li><strong>Electricity Consumption by Year:</strong> Chart showing units consumed 2016–2019.</li>
+    <li><strong>Timeframe Selector:</strong> Choose Daily, Weekly, Monthly, or Yearly view.</li>
+</ul>
+            </div>
+            <div class="step-image">
+                <img src="imgs/EnergyCons-8.png" class="L-image" alt="KPI Results">
+            </div>
+        </section>
+
+           <section class="step-card">
+            <div class="step-content">
+
+<h3><span class="step-number">09</span> Gas Consumption Dashboard</h3>
+<p>
+    This page visualizes water usage and costs with the following sections:
+</p>
+<ul>
+    <li><strong>Total Gas Consumption:</strong> Shows overall consumption (Daily, Weekly, Monthly, Yearly). Example: 3,035,327 Units.</li>
+    <li><strong>Gas Consumption by City:</strong> Chart/table for cities: New York, Chicago, Los Angeles, Phoenix, Houston.</li>
+    <li><strong>Gas Consumption by Building:</strong> Chart by Building IDs.</li>
+    <li><strong>Gas Cost by Year:</strong> Chart showing costs from 2016–2019.</li>
+    <li><strong>Gas Consumption by Year:</strong> Chart showing units consumed 2016–2019.</li>
+    <li><strong>Timeframe Selector:</strong> Choose Daily, Weekly, Monthly, or Yearly view.</li>
+</ul>
+            </div>
+            <div class="step-image">
+                <img src="imgs/EnergyCons-9.png" alt="Data Cleaning Process">
+            </div>
+        </section>
+
+
+           <section class="step-card">
+            <div class="step-content">
+
+<h3><span class="step-number">Insights & Recommendations</span></h3>
+
+<h4>Key Insights</h4>
+<ul>
+    <li><strong>Water Consumption:</strong> Highest usage (88.49% of total energy), but cost remains relatively stable. Peak in 2017, slight increase in 2019. Opportunity for conservation efforts without affecting budget.</li>
+    <li><strong>Gas Consumption:</strong> Lowest usage, decreasing trend from 2016–2019, reflected in Gas Cost. Likely due to efficiency improvements and shift to alternative energy sources.</li>
+    <li><strong>Need for Deeper Analysis:</strong> More details (building type, activity, policy changes, infrastructure, operations) are needed to fully explain water and gas consumption patterns.</li>
+    <li><strong>Additional Insights:</strong> Analysis by city, time of day, or day of week can reveal peak usage and areas for conservation, improving resource management.</li>
+</ul>
+
+<h4>Recommendations</h4>
+<ul>
+    <li><strong>Conservation Strategies:</strong> Implement water-saving and energy-reduction initiatives based on dashboard insights.</li>
+    <li><strong>Efficiency Measures:</strong> Investigate reasons for gas reduction and explore further operational efficiency opportunities.</li>
+    <li><strong>Enhanced Data Analysis:</strong> Include building type, location, and time periods to better understand energy patterns.</li>
+    <li><strong>Continuous Monitoring:</strong> Use dashboards to track changes, detect anomalies, and make data-driven decisions for cost optimization and effective resource management.</li>
+</ul>
+
+<p>
+    Overall, leveraging Power BI and data visualization provides actionable insights that support sustainable energy practices, cost reduction, and operational efficiency.
+</p>
+            </div>
+        </section>
+ <a href="https://github.com/zeyadmohammedabdullahhassan-rgb/Project-Health-Scorecard-Dashboard">
+                <i class="fab-fa-github-in">Link Files the Porject In GitHub</i>
+
+        </a>
+    </main>
+
+    <footer>
+  
+        <p>&copy; 2026 Energy Consumption Data Project | Built with Passion for Data</p>
+    </footer>
+
+
+
+  </div>
+
+</body>
+</html>
